@@ -4,7 +4,7 @@
 
 This tech blog is the perfect site to checkout other peoples tech related thoughts and share your own while commenting on other peoples posts!
 
-[Check it out here!]()
+[Check it out here!](https://mvc-tech-blog-rgl.herokuapp.com/)
 
 ## Table of Contents:
 - [Installation](#installation)
