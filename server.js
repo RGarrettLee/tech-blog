@@ -9,7 +9,7 @@ const sequelize = require('./config/connection');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5050;
 const app = express();
 
 const hbs = exphbs.create({ helpers });
@@ -20,7 +20,9 @@ const sess = {
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
-        db: sequelize
+        db: sequelize,
+        checkExpirationInterval: 1000*10,
+        expiration: 1000*120
     })
 };
 
@@ -39,5 +41,5 @@ app.get('*', (req, res) => {
 });
 
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log(`Server is live at https://localhost:${PORT}`));
+    app.listen(PORT, () => console.log(`Server is live at http://localhost:${PORT}`));
 }) 

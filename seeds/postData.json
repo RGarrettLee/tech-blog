@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "title": "Test Post",
+        "content": "This is a test post to see if the page can render it correctly",
+        "user_id": 1
+    },
+    {
+        "id": 2,
+        "title": "Woah a post!",
+        "content": "change the description to be a hook of the first 100 characters of the article or something",
+        "user_id": 1
+    }
+]
