@@ -1,10 +1,17 @@
 <div>
     <h1 class="text-white text-center">Dashboard</h1>
-    <div class="container d-flex justify-content-center align-items-center">
-        <div class="row row-cols-1">
-            {{#each user.posts as |post|}}
-            {{> post-details}}
-            {{/each}}
-        </div>
+    <div>
+        <form>
+            <div class="form-group"> 
+                <label for="postTitle" class="text-white">Post Title:</label>
+                <input type="text" class="form-control" id="postTitle" required>
+                <label for="Textarea" class="text-white">Make a Post!</label>
+                <textarea class="form-control" id="postInput" rows="3" required></textarea>
+            </div>
+        </form>
+        <button class="btn btn-primary" type="button" value="submit" id="postSubmit">Post</button>
+        <button class="btn btn-secondary" type="reset" value="reset" id="cancelSubmit" onClick="window.location.reload();">Cancel</button>
     </div>
 </div>
+
+<script src="/js/createPost.js"></script>
