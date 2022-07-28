@@ -40,4 +40,23 @@ router.post('/logout', (req, res) => {
     }
 });
 
+router.post('/signup', async (req, res) => {
+    try {
+        const userDataDb = await User.create({
+            username: req.body.username,
+            password: req.body.password
+        });
+
+
+        req.session.save(() => {
+            req.session.logged_in = true,
+            req.session.user_id = userDataDb.id,
+            req.session.username = userDataDb.username,
+            res.status(200).json(userDataDb)
+        })
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
 module.exports = router;
