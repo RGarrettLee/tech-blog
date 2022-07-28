@@ -12,6 +12,13 @@
         <button class="btn btn-primary" type="button" value="submit" id="postSubmit">Post</button>
         <button class="btn btn-secondary" type="reset" value="reset" id="cancelSubmit" onClick="window.location.reload();">Cancel</button>
     </div>
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="row row-cols-1">
+            {{#each posts as |post|}}
+            {{> post-details}}
+            {{/each}}
+        </div>
+    </div>
 </div>
 
 <script src="/js/createPost.js"></script>
